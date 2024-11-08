@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - ABOODY.COM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>تسجيل الدخول</h1>
+    <form action="your_login_endpoint" method="POST">
+        <input type="text" name="email" placeholder="البريد الإلكتروني" required><br>
+        <input type="password" name="password" placeholder="كلمة المرور" required><br>
+        <button type="submit" class="button">تسجيل الدخول</button>
+    </form>
+    <p>
+        <a href="#">هل نسيت كلمة المرور؟</a><br>
+        <a href="register.html" class="button">إنشاء حساب جديد</a>
+    </p>
+</body>
+</html>

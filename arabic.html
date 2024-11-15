@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زر 2</title>
+    <title>الكتب العربية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/Background image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+        }
+        .button {
+            background-color: #ffeb3b;
+            border: 2px solid #007bff;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+            width: 150px;
+            height: 150px;
+            font-size: 18px;
+            color: #007bff;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background-color: #ffe57f;
+        }
+    </style>
 </head>
 <body>
-    <h1>هذه هي صفحة زر 2</h1>
-    <p>يمكنك إضافة محتوى هنا.</p>
-    <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+    <div class="background-text">الكتب العربية</div>
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='almufeed.html'"><i class="fas fa-book"></i> كتاب المفيد</button>
+        <button class="button" onclick="window.location.href='almownes.html'"><i class="fas fa-book"></i> كتاب المؤنس</button>
+    </div>
 </body>
 </html>

@@ -3,93 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOODY.COM</title>
+    <title>Study Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* لون خلفية متدرج رائع */
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
             color: #333;
             text-align: center;
-            position: relative; /* لتكون العناصر المطلقة متعلقة بالجسم */
+            position: relative;
         }
         .background-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 80px; /* حجم كبير لاسمك */
-            color: rgba(255, 255, 255, 0.1); /* لون فاتح مع شفافية */
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.1);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            z-index: 0; /* خلفية النص */
+            z-index: 0;
         }
-        .logo {
-            position: absolute;
-            top: 20px; /* يمكنك ضبط الموقع كما تريد */
-            left: 20px; /* وضع الشعار في الزاوية العليا اليسرى */
-            font-size: 50px; /* حجم الشعار */
+        .header {
+            font-size: 50px;
             color: #fff;
-            z-index: 1; /* شعار فوق الخلفية */
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* تأثير ظل ناري */
-        }
-        .decorative-logo {
-            position: absolute;
-            top: 30px; /* وضع الزخرفة قليلاً أسفل الشعار */
-            left: 70px; /* وضع الزخرفة بالقرب من الشعار */
-            font-size: 30px; /* حجم الزخرفة */
-            color: rgba(255, 255, 255, 0.6); /* لون الزخرفة */
-            z-index: 1; /* فوق الخلفية */
-            /* يمكنك استخدام رمز زخرفي مثل هذا، أو استخدام صورة لرسم زخرفي */
-        }
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            background: transparent; /* تغيير الخلفية إلى شفاف */
-            z-index: 2; /* فوق كل العناصر */
-        }
-        .login-button {
-            font-size: 14px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            margin-left: 20px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .login-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        .login-button::before {
-            content: '\f007'; /* رمز أيقونة المستخدم */
-            font-family: "Font Awesome 5 Free"; 
-            font-weight: 900;
-            margin-left: 5px;
-            font-size: 16px;
+            margin-top: 20px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
         .button-container {
             display: flex;
-            flex-direction: column; /* ترتيب عمودي */
-            align-items: center; /* محاذاة الأزرار في الوسط */
-            margin-top: 80px; /* إضافة مسافة لتجنب التداخل مع الهيدر */
-            z-index: 1; /* فوق الخلفية */
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+            z-index: 1;
         }
         .button {
-            background-color: #ffeb3b; /* لون الخلفية */
-            border: 2px solid #007bff; /* لون الحدود */
-            border-radius: 15px; /* زوايا منحنية */
+            background-color: #ffeb3b;
+            border: 2px solid #007bff;
+            border-radius: 15px;
             padding: 20px;
-            margin: 10px 0; /* مسافة بين الأزرار */
-            width: 150px;
+            margin: 10px;
+            width: 200px;
             height: 150px;
             font-size: 18px;
-            color: #007bff; /* لون النص */
+            color: #007bff;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
             display: flex;
@@ -98,13 +56,13 @@
             justify-content: center;
         }
         .button:hover {
-            transform: scale(1.1) rotate(-2deg); /* تأثير تكبير ودوران */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* تأثير الظل */
-            background-color: #ffe57f; /* لون خلفية عند التحويم */
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background-color: #ffe57f;
         }
         .button i {
-            font-size: 30px; /* حجم الأيقونة */
-            margin-bottom: 10px; /* مسافة بين الأيقونة والنص */
+            font-size: 40px;
+            margin-bottom: 10px;
         }
         .footer {
             position: fixed;
@@ -113,38 +71,23 @@
             transform: translateX(-50%);
             font-size: 14px;
             color: #fff;
-            z-index: 2; /* فوق كل العناصر */
-        }
-
-        @media (max-width: 768px) {
-            .button-container {
-                flex-direction: row; /* تجعل الأزرار جنبًا إلى جنب على الشاشات الصغيرة */
-                flex-wrap: wrap; /* تلتف الأزرار إلى السطر التالي عند الحاجة */
-            }
-            .button {
-                width: 45%; /* تأكد أن الأزرار تأخذ عرض أقل على الشاشات الصغيرة */
-                height: auto; /* اجعل الارتفاع تلقائي */
-            }
+            z-index: 2;
         }
     </style>
 </head>
 <body>
-    <div class="background-text">عبودي</div>
-    <div class="logo">AS</div>
-    <div class="decorative-logo">✨🌟✨</div> <!-- زخرفة بسيطة باستخدام الرموز -->
-    <header>
-        <button class="login-button" onclick="window.location.href='login.html'">تسجيل الدخول</button>
-    </header>
+    <div class="background-text">دراستي</div>
+    <div class="header">المواد الدراسية</div>
     <div class="button-container">
-        <button class="button" onclick="window.location.href='page1.html'"><i class="fas fa-tachometer-alt"></i> لوحة التحكم</button>
-        <button class="button" onclick="window.location.href='page2.html'"><i class="fas fa-cog"></i> الإعدادات</button>
-        <button class="button" onclick="window.location.href='page3.html'"><i class="fas fa-file-alt"></i> التقارير</button>
-        <button class="button" onclick="window.location.href='page4.html'"><i class="fas fa-question-circle"></i> المساعدة</button>
-        <button class="button" onclick="window.location.href='page5.html'"><i class="fas fa-phone-alt"></i> التواصل معنا</button>
-        <button class="button" onclick="window.location.href='page6.html'"><i class="fas fa-info-circle"></i> عن الموقع</button>
+        <button class="button" onclick="window.location.href='chemistry.html'"><i class="fas fa-flask"></i> كيمياء</button>
+        <button class="button" onclick="window.location.href='physics.html'"><i class="fas fa-atom"></i> فيزياء</button>
+        <button class="button" onclick="window.location.href='arabic.html'"><i class="fas fa-book-open"></i> لغة عربية</button>
+        <button class="button" onclick="window.location.href='math.html'"><i class="fas fa-square-root-alt"></i> رياضيات</button>
+        <button class="button" onclick="window.location.href='history.html'"><i class="fas fa-landmark"></i> هذا وطني</button>
+        <button class="button" onclick="window.location.href='english.html'"><i class="fas fa-language"></i> English</button>
     </div>
     <div class="footer">
-        © 2024 ABOODY.COM
+        © 2024 Study Group
     </div>
 </body>
 </html>

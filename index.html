@@ -10,33 +10,15 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: #333;
             text-align: center;
-            position: relative;
-        }
-        .background-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 80px;
-            color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            z-index: 0;
-        }
-        .header {
-            font-size: 50px;
-            color: #fff;
-            margin-top: 20px;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
         .button-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 50px;
-            z-index: 1;
         }
         .button {
             background-color: #ffeb3b;
@@ -54,40 +36,69 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         .button:hover {
-            transform: scale(1.1) rotate(-2deg);
+            transform: scale(1.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             background-color: #ffe57f;
         }
         .button i {
-            font-size: 40px;
+            font-size: 30px;
             margin-bottom: 10px;
         }
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            z-index: 10;
+        }
+        .button:hover .dropdown {
+            display: flex;
+        }
+        .dropdown a {
+            padding: 10px;
+            text-decoration: none;
+            color: #007bff;
+            background: #f9f9f9;
+            border-bottom: 1px solid #ccc;
+            transition: background-color 0.3s;
+        }
+        .dropdown a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
         .footer {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 50px;
             font-size: 14px;
             color: #fff;
-            z-index: 2;
         }
     </style>
 </head>
 <body>
-    <div class="background-text">دراستي</div>
-    <div class="header">المواد الدراسية</div>
     <div class="button-container">
-        <button class="button" onclick="window.location.href='chemistry.html'"><i class="fas fa-flask"></i> كيمياء</button>
-        <button class="button" onclick="window.location.href='physics.html'"><i class="fas fa-atom"></i> فيزياء</button>
-        <button class="button" onclick="window.location.href='arabic.html'"><i class="fas fa-book-open"></i> لغة عربية</button>
-        <button class="button" onclick="window.location.href='math.html'"><i class="fas fa-square-root-alt"></i> رياضيات</button>
-        <button class="button" onclick="window.location.href='history.html'"><i class="fas fa-landmark"></i> هذا وطني</button>
-        <button class="button" onclick="window.location.href='english.html'"><i class="fas fa-language"></i> English</button>
+        <!-- زر اللغة العربية -->
+        <div class="button">
+            <i class="fas fa-book"></i> اللغة العربية
+            <div class="dropdown">
+                <a href="almufeed.html">كتاب المفيد</a>
+                <a href="almownes.html">كتاب المؤنس</a>
+            </div>
+        </div>
+        <!-- بقية المواد -->
+        <div class="button" onclick="window.location.href='chemistry.html'"><i class="fas fa-flask"></i> كيمياء</div>
+        <div class="button" onclick="window.location.href='physics.html'"><i class="fas fa-atom"></i> فيزياء</div>
+        <div class="button" onclick="window.location.href='math.html'"><i class="fas fa-square-root-alt"></i> رياضيات</div>
+        <div class="button" onclick="window.location.href='thisisourcountry.html'"><i class="fas fa-landmark"></i> هذا وطني</div>
+        <div class="button" onclick="window.location.href='english.html'"><i class="fas fa-globe"></i> English</div>
     </div>
     <div class="footer">
-        © 2024 Study Group
+        © 2024 ABOODY
     </div>
 </body>
 </html>

@@ -4,50 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كيمياء</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            text-align: center;
+            position: relative;
             background-color: #f4f4f4;
         }
+        .header {
+            background-color: #007bff;
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+        }
         .button-container {
-            margin: 20px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 40px;
         }
         .button {
             background-color: #ffeb3b;
             border: 2px solid #007bff;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 20px;
-            margin: 10px 0;
-            width: 300px;
-            text-align: center;
+            margin: 10px;
+            width: 200px;
+            height: 100px;
             font-size: 18px;
             color: #007bff;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
         }
         .button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             background-color: #ffe57f;
-        }
-        .title {
-            font-size: 24px;
-            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
-    <h1 class="title">أبواب مادة الكيمياء</h1>
+    <div class="header">مادة كيمياء</div>
     <div class="button-container">
-        <button class="button" onclick="window.location.href='pages/chemistry/chapter1.html'">باب 1 - الاتزان في المحاليل المائية</button>
-        <button class="button" onclick="window.location.href='pages/chemistry/chapter2.html'">باب 2 - الكيمياء الكهربائية</button>
-        <button class="button" onclick="window.location.href='pages/chemistry/chapter3.html'">باب 3 - طاقة الشبكة البلورية</button>
-        <button class="button" onclick="window.location.href='pages/chemistry/chapter4.html'">باب 4 - مشتقات الهيدروكربونات(I)</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry-chapter1.html'">باب 1 - الاتزان في المحاليل المائية</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry-chapter2.html'">باب 2 - الكيمياء الكهربائية</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry-chapter3.html'">باب 3 - طاقة الشبكة البلورية</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry-chapter4.html'">باب 4 - مشتقات الهيدروكربونات(I)</button>
     </div>
 </body>
 </html>

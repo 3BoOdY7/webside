@@ -11,8 +11,8 @@
             margin: 0;
             padding: 0;
             background: url('images/Background image.jpg') no-repeat center center fixed;
-            background-size: cover; /* لجعل الصورة تغطي كامل الشاشة */
-            background-attachment: fixed; /* لضمان تثبيت الصورة في الخلف */
+            background-size: cover; /* لتغطية الصورة كامل الشاشة */
+            background-attachment: fixed; /* لتثبيت الصورة في الخلف */
             color: #333;
             text-align: center;
             position: relative;
@@ -98,35 +98,10 @@
             z-index: 2;
         }
 
-        /* تحسين الاستجابة على الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .background-text {
-                font-size: 50px; /* تقليل حجم النص على الشاشات الصغيرة */
-            }
-            .logo {
-                font-size: 40px; /* تقليل حجم الشعار */
-            }
-            .button-container {
-                margin-top: 20px;
-            }
-            .button {
-                width: 120px; /* تقليل حجم الأزرار */
-                height: 120px;
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .background-text {
-                font-size: 30px; /* تقليل حجم النص أكثر للأجهزة الصغيرة جدًا */
-            }
-            .logo {
-                font-size: 30px; /* تقليل حجم الشعار */
-            }
-            .button {
-                width: 100px; /* تقليل حجم الأزرار */
-                height: 100px;
-                font-size: 14px;
+        @media (min-width: 1024px) {
+            body {
+                background-size: contain; /* لتناسب الصورة مع الشاشة في الأجهزة الكبيرة */
+                background-position: center center; /* لضمان أن الصورة تتوسط الشاشة */
             }
         }
     </style>

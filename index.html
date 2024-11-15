@@ -11,8 +11,7 @@
             margin: 0;
             padding: 0;
             background: url('images/Background image.jpg') no-repeat center center fixed;
-            background-size: cover; /* لجعل الصورة تغطي كامل الشاشة */
-            background-attachment: fixed; /* لضمان تثبيت الصورة في الخلف */
+            background-size: cover;
             color: #333;
             text-align: center;
             position: relative;
@@ -97,6 +96,13 @@
             color: #fff;
             z-index: 2;
         }
+
+        @media (min-width: 1024px) {
+            body {
+                background-size: contain;
+                background-position: center center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -106,16 +112,16 @@
         <button class="login-button" onclick="window.location.href='login.html'">تسجيل الدخول</button>
     </header>
     <div class="button-container">
-        <button class="button" onclick="window.location.href='chemistry.html'"><i class="fas fa-flask"></i> كيمياء</button>
-        <button class="button" onclick="window.location.href='physics.html'"><i class="fas fa-atom"></i> فيزياء</button>
-        <button class="button" onclick="window.location.href='arabic.html'"><i class="fas fa-book"></i> لغة عربية</button>
-        <button class="button" onclick="window.location.href='math.html'"><i class="fas fa-square-root-alt"></i> رياضيات</button>
-        <button class="button" onclick="window.location.href='patriotism.html'"><i class="fas fa-flag"></i> هذا وطني</button>
-        <button class="button" onclick="window.location.href='english.html'"><i class="fas fa-language"></i> English</button>
+        <button class="button" onclick="window.location.href='chemistry/chemistry.html'">كيمياء</button>
+<button class="button" onclick="window.location.href='physics/physics.html'">فيزياء</button>
+<button class="button" onclick="window.location.href='arabic/arabic.html'">لغة عربية</button>
+<button class="button" onclick="window.location.href='math/math.html'">رياضيات</button>
+<button class="button" onclick="window.location.href='patriotism/patriotism.html'">هذا وطني</button>
+<button class="button" onclick="window.location.href='english/english.html'">English</button>
+
     </div>
     <div class="footer">
         © 2024 ABOODY.COM
     </div>
 </body>
 </html>
-

@@ -109,8 +109,8 @@
     <div class="background-text">عبودي</div>
     <div class="logo">AS</div>
     <header>
-        <!-- إذا لم يكن المستخدم قد سجل الدخول، يتم توجيهه إلى صفحة تسجيل الدخول -->
-        <button class="login-button" onclick="window.location.href='pages/login/login.html'">تسجيل الدخول</button>
+        <!-- التحقق من حالة تسجيل الدخول -->
+        <button class="login-button" onclick="window.location.href='login/login.html'">تسجيل الدخول</button>
     </header>
     <div class="button-container">
         <button class="button" onclick="window.location.href='pages/chemistry.html'"><i class="fas fa-flask"></i> كيمياء</button>
@@ -128,7 +128,7 @@
     <script>
         // تحقق من حالة تسجيل الدخول عند تحميل الصفحة
         if (!sessionStorage.getItem('loggedIn')) {
-            window.location.href = 'login.html'; // إذا لم يكن المستخدم قد سجل الدخول، يتم التوجيه إلى صفحة تسجيل الدخول.
+            window.location.href = 'login/login.html'; // إذا لم يكن المستخدم قد سجل الدخول، يتم التوجيه إلى صفحة تسجيل الدخول.
         }
     </script>
 </body>

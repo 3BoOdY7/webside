@@ -7,46 +7,75 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding-top: 100px;
         }
         .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 300px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .input-field {
+        .login-container input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ccc;
             border-radius: 5px;
+            border: 1px solid #ddd;
         }
-        .login-button {
-            width: 100%;
+        .login-container button {
+            background-color: #4CAF50;
+            color: white;
             padding: 10px;
-            background-color: #007bff;
-            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            width: 100%;
         }
-        .login-button:hover {
-            background-color: #0056b3;
+        .login-container button:hover {
+            background-color: #45a049;
         }
-        .error-message {
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>تسجيل الدخول</h2>
+        <form onsubmit="event.preventDefault(); login();">
+            <input type="text" id="username" placeholder="اسم المستخدم" required>
+            <input type="password" id="password" placeholder="كلمة السر" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <p id="error" class="error"></p>
+    </div>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const users = {
+                'user1': 'password123',
+                'user2': 'password456',
+                'admin': 'admin123'
+            };
+
+            if (users[username] && users[username] === password) {
+                sessionStorage.setItem('loggedIn', 'true');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
+            }
+        }
+    </script>
+</body>
+</html>
+
             color: red;
             margin-top: 10px;
             text-align: center;

@@ -1,40 +1,53 @@
-
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كيمياء</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 20px;
-            background: url('../images/Background image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            text-align: center;
-            color: #333;
+            background-color: #f4f4f4;
         }
         .button-container {
-            margin-top: 40px;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .button {
             background-color: #ffeb3b;
             border: 2px solid #007bff;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 20px;
-            margin: 10px;
-            width: 200px;
-            height: 100px;
+            margin: 10px 0;
+            width: 300px;
+            text-align: center;
             font-size: 18px;
             color: #007bff;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
         }
         .button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             background-color: #ffe57f;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
-    <h1>أبواب مادة الكيمياء</h1>
+    <h1 class="title">أبواب مادة الكيمياء</h1>
     <div class="button-container">
-        <button class="button" onclick="window.location.href='../chemistry/chemistry-chapter1.html'">الوحدة 1: الاتزان في المحاليل المائية</button>
-        <button class="button" onclick="window.location.href='../chemistry/chemistry-chapter2.html'">الوحدة 2: الكيمياء الكهربائية</button>
-        <button class="button" onclick="window.location.href='../chemistry/chemistry-chapter3.html'">الوحدة 3: طاقة الشبكة البلورية</button>
-        <button class="button" onclick="window.location.href='../chemistry/chemistry-chapter4.html'">الوحدة 4: مشتقات الهيدروكربونات (I)</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry.html-chapter1'">باب 1 - الاتزان في المحاليل المائية</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry.html-chapter2'">باب 2 - الكيمياء الكهربائية</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry.html-chapter3'">باب 3 - طاقة الشبكة البلورية</button>
+        <button class="button" onclick="window.location.href='pages/chemistry/chemistry.html-chapter4.html'">باب 4 - مشتقات الهيدروكربونات(I)</button>
     </div>
 </body>
 </html>

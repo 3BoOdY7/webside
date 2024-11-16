@@ -67,29 +67,11 @@
 
             if (users[username] && users[username] === password) {
                 sessionStorage.setItem('loggedIn', 'true');
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';  // التوجيه إلى الصفحة الرئيسية بعد تسجيل الدخول بنجاح
             } else {
                 document.getElementById('error').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
             }
         }
     </script>
-</body>
-</html>
-
-            color: red;
-            margin-top: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h1>تسجيل الدخول</h1>
-        <input id="username" class="input-field" type="text" placeholder="اسم المستخدم">
-        <input id="password" class="input-field" type="password" placeholder="كلمة المرور">
-        <button class="login-button" onclick="login()">دخول</button>
-        <p id="error" class="error-message"></p>
-    </div>
-    <script src="script.js"></script>
 </body>
 </html>

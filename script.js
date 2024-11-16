@@ -1,24 +1,16 @@
-// قائمة الحسابات المسموح بها
-const accounts = [
-    { username: "user1", password: "password1" },
-    { username: "user2", password: "password2" },
-    { username: "admin", password: "admin123" }
-];
+// بيانات الدخول المتاحة في الكود (يمكنك تعديلها لاحقًا)
+const validUsername = 'user1'; // اسم المستخدم الصحيح
+const validPassword = 'password123'; // كلمة المرور الصحيحة
 
-// وظيفة تسجيل الدخول
 function login() {
-    const usernameInput = document.getElementById("username").value;
-    const passwordInput = document.getElementById("password").value;
-    const errorElement = document.getElementById("error");
-
-    // البحث عن الحساب في القائمة
-    const account = accounts.find(acc => acc.username === usernameInput && acc.password === passwordInput);
-
-    if (account) {
-        // تسجيل الدخول ناجح - الانتقال إلى الصفحة الرئيسية
-        window.location.href = "main.html";
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    if (username === validUsername && password === validPassword) {
+        // التوجيه إلى الصفحة الرئيسية
+        window.location.href = 'index.html'; // أو إلى صفحة أخرى
     } else {
         // عرض رسالة خطأ
-        errorElement.textContent = "عذرا حسابك غير مسجل في المنصة الرجاء التحقق واعادة المحاولة";
+        document.getElementById('error').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
     }
 }

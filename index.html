@@ -6,112 +6,97 @@
     <title>ABOODY.COM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* تصميم خلفية الصفحة */
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('images/Background image.jpg') no-repeat center center fixed;
-            background-size: cover;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
             color: #333;
             text-align: center;
-            position: relative;
+            margin: 0;
         }
+
         .background-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 80px;
-            color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            z-index: 0;
+            font-size: 100px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.1);
         }
+
         .logo {
             position: absolute;
             top: 20px;
             left: 20px;
-            font-size: 50px;
-            color: #fff;
-            z-index: 1;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            font-size: 30px;
+            font-weight: bold;
+            color: #007bff;
         }
+
         header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            background: transparent;
-            z-index: 2;
+            position: absolute;
+            top: 10px;
+            right: 20px;
         }
+
         .login-button {
-            font-size: 14px;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             background-color: #007bff;
             color: white;
             cursor: pointer;
-            margin-left: 20px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .login-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 80px;
-            z-index: 1;
-        }
-        .button {
-            background-color: #ffeb3b;
-            border: 2px solid #007bff;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 10px 0;
-            width: 150px;
-            height: 150px;
             font-size: 18px;
-            color: #007bff;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .button:hover {
-            transform: scale(1.1) rotate(-2deg);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            background-color: #ffe57f;
-        }
-        .footer {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 14px;
-            color: #fff;
-            z-index: 2;
         }
 
-        @media (min-width: 1024px) {
-            body {
-                background-size: contain;
-                background-position: center center;
-            }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-container {
+            margin-top: 100px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #aaa;
+        }
+
+        /* تأثيرات تحرك الأزرار */
+        .button:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
 <body>
     <div class="background-text">عبودي</div>
     <div class="logo">AS</div>
+    
     <header>
         <!-- التحقق من حالة تسجيل الدخول -->
-        <button class="login-button" onclick="window.location.href='login/login.html'">تسجيل الدخول</button>
+        <button class="login-button" onclick="window.location.href='login.html'">تسجيل الدخول</button>
     </header>
+
     <div class="button-container">
         <button class="button" onclick="window.location.href='pages/chemistry.html'"><i class="fas fa-flask"></i> كيمياء</button>
         <button class="button" onclick="window.location.href='pages/physics.html'"><i class="fas fa-atom"></i> فيزياء</button>
@@ -122,13 +107,18 @@
         <button class="button" onclick="window.location.href='pages/islamic.html'"><i class="fas fa-mosque"></i> إسلامية</button>
         <button class="button" onclick="window.location.href='pages/sports.html'"><i class="fas fa-football-ball"></i> رياضة</button>
     </div>
+
     <div class="footer">
         <p>&copy; 2024 عبودي</p>
     </div>
+
     <script>
         // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
         if (!sessionStorage.getItem('loggedIn')) {
-            window.location.href = 'login/login.html'; // إذا لم يكن المستخدم قد سجل الدخول، يتم التوجيه إلى صفحة تسجيل الدخول.
+            window.location.href = 'login.html'; // إذا لم يكن المستخدم قد سجل الدخول، يتم التوجيه إلى صفحة تسجيل الدخول.
+        } else {
+            // إذا تم تسجيل الدخول، عرض رسالة ترحيب
+            alert('مرحبًا بك في الموقع!');
         }
     </script>
 </body>

@@ -16,16 +16,6 @@
             text-align: center;
             position: relative;
         }
-        .background-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 80px;
-            color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            z-index: 0;
-        }
         .logo {
             position: absolute;
             top: 20px;
@@ -34,29 +24,6 @@
             color: #fff;
             z-index: 1;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-        }
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            background: transparent;
-            z-index: 2;
-        }
-        .login-button {
-            font-size: 14px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            margin-left: 20px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .login-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
         }
         .button-container {
             display: flex;
@@ -106,11 +73,7 @@
     </style>
 </head>
 <body>
-    <div class="background-text">عبودي</div>
     <div class="logo">AS</div>
-    <header>
-        <button class="login-button" onclick="window.location.href='pages/login/login.html'">تسجيل الدخول</button>
-    </header>
     <div class="button-container">
         <button class="button" onclick="window.location.href='pages/chemistry.html'"><i class="fas fa-flask"></i> كيمياء</button>
         <button class="button" onclick="window.location.href='pages/physics.html'"><i class="fas fa-atom"></i> فيزياء</button>
@@ -124,5 +87,13 @@
     <div class="footer">
         © 2024 ABOODY.COM
     </div>
+
+    <script>
+        // التحقق من حالة تسجيل الدخول
+        if (!sessionStorage.getItem('loggedIn')) {
+            // توجيه المستخدم إلى صفحة تسجيل الدخول إذا لم يكن مسجلًا
+            window.location.href = 'pages/login/login.html';
+        }
+    </script>
 </body>
 </html>

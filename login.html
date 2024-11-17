@@ -9,13 +9,15 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
+            background-color: #f4f4f4;
         }
         .input-field {
             margin: 10px 0;
             padding: 10px;
-            width: 200px;
+            width: 250px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
         }
         .login-button {
             padding: 10px 20px;
@@ -24,9 +26,14 @@
             background-color: #007bff;
             color: white;
             cursor: pointer;
+            font-size: 16px;
         }
         .login-button:hover {
             background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -37,13 +44,27 @@
         <input type="password" class="input-field" id="password" placeholder="كلمة المرور" required><br>
         <button type="submit" class="login-button">تسجيل الدخول</button>
     </form>
+    <p id="error-message" class="error"></p>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // تسجيل الدخول
-            sessionStorage.setItem('loggedIn', true);
-            window.location.href = 'index.html'; // العودة إلى الصفحة الرئيسية بعد تسجيل الدخول
+        // ربط نموذج تسجيل الدخول بالحدث
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+
+            // الحصول على اسم المستخدم وكلمة المرور
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // تحقق بسيط من البيانات المدخلة
+            if (username === 'admin' && password === '12345') {
+                // تسجيل الدخول بنجاح
+                sessionStorage.setItem('loggedIn', true);
+                window.location.href = 'index.html';
+            } else {
+                // عرض رسالة خطأ
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
+            }
         });
     </script>
 </body>

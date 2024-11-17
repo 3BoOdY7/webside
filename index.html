@@ -90,7 +90,7 @@
 
     <script>
         // التحقق من حالة تسجيل الدخول
-        if (!sessionStorage.getItem('loggedIn')) {
+        if (!sessionStorage.getItem('loggedIn') || sessionStorage.getItem('loggedIn') !== 'true') {
             // توجيه المستخدم إلى صفحة تسجيل الدخول إذا لم يكن مسجلًا
             window.location.href = 'pages/login/login.html';
         }

@@ -3,60 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الصفحة الرئيسية</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .welcome {
-            margin: 50px 0;
-            font-size: 24px;
-            color: #333;
-        }
-        .logout-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .logout-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>الصفحة الرئيسية بعد تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>مرحبًا بك في الصفحة الرئيسية</h1>
-    <p class="welcome" id="welcomeMessage"></p>
-    <button class="logout-button" onclick="logout()">تسجيل الخروج</button>
-
-    <script>
-        // استرجاع اسم المستخدم
-        const loggedInUser = localStorage.getItem('loggedInUser') || sessionStorage.getItem('loggedInUser');
-
-        // عرض رسالة الترحيب
-        if (loggedInUser) {
-            document.getElementById('welcomeMessage').innerText = `مرحبًا، ${loggedInUser}!`;
-        } else {
-            // إعادة توجيه إذا لم يكن المستخدم مسجل الدخول
-            alert("يرجى تسجيل الدخول أولاً.");
-            window.location.href = "login.html";
-        }
-
-        // تسجيل الخروج
-        function logout() {
-            localStorage.removeItem('loggedInUser');
-            sessionStorage.removeItem('loggedInUser');
-            alert("تم تسجيل الخروج بنجاح!");
-            window.location.href = "login.html";
-        }
-    </script>
+    <h1>أهلاً بك في الصفحة الرئيسية بعد تسجيل الدخول!</h1>
+    <div style="text-align: center;">
+        <a href="/">
+            <button>العودة إلى الصفحة الرئيسية</button>
+        </a>
+    </div>
 </body>
 </html>

@@ -4,52 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f3f3f3;
-            color: #333;
-        }
-        form {
-            margin: 50px auto;
-            max-width: 300px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #fff;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .error {
-            color: red;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form method="POST" action="/login">
-        <h1>تسجيل الدخول</h1>
-        <input type="text" name="username" placeholder="اسم المستخدم" required>
-        <input type="password" name="password" placeholder="كلمة المرور" required>
+    <h1>تسجيل الدخول</h1>
+    <form method="POST" action="/login" style="text-align: center;">
+        <input type="text" name="username" placeholder="اسم المستخدم" required><br><br>
+        <input type="password" name="password" placeholder="كلمة المرور" required><br><br>
         <button type="submit">تسجيل الدخول</button>
-        <div class="error">رسالة خطأ هنا</div>
     </form>
 </body>
 </html>

@@ -1,11 +1,30 @@
+/* إعدادات الخلفية */
 body {
-    font-family: 'Arial', sans-serif;
+    background-image: url('static/images/Background image.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('images/andrik-langfield-1-YQiOijio8-unsplash.jpg') no-repeat center center fixed;
-    background-size: cover; /* تجعل الصورة تغطي المساحة بالكامل */
-    background-attachment: fixed; /* تجعل الصورة ثابتة عند التمرير */
-    background-position: center center; /* تتأكد من تمركز الصورة */
-    height: 100vh; /* لضمان أن الخلفية تغطي كامل ارتفاع الصفحة */
-    width: 100%; /* تغطي كامل عرض الصفحة */
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding-top: 20%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
 }

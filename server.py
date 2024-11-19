@@ -1,35 +1,29 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
 
-# بيانات الحسابات وكلمات السر
-users = {
-    'user1': 'password123',
-    'user2': 'password456',
-    'admin': 'admin123'
-}
+# الصفحة الرئيسية
+@app.route('/')
+def index():
+    return render_template('index.html')
 
+# صفحة تسجيل الدخول
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        # يمكن إضافة عملية التحقق هنا
         username = request.form['username']
         password = request.form['password']
-        
-        if username in users and users[username] == password:
-            session['loggedIn'] = True  # حفظ حالة تسجيل الدخول في الجلسة
-            return redirect(url_for('home'))  # الانتقال إلى الصفحة الرئيسية
+        if username == 'admin' and password == 'password':  # مثال
+            return redirect(url_for('main'))
         else:
-            error = 'اسم المستخدم أو كلمة المرور غير صحيحة'
-            return render_template('login.html', error=error)
+            return 'خطأ في البيانات!'
     return render_template('login.html')
 
-@app.route('/')
-def home():
-    if 'loggedIn' not in session:
-        return redirect(url_for('login'))  # إذا لم يكن المستخدم مسجلاً دخوله، يتم التوجيه إلى صفحة تسجيل الدخول
-    return 'مرحبًا بك في الصفحة الرئيسية'
+# الصفحة الرئيسية بعد تسجيل الدخول
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
